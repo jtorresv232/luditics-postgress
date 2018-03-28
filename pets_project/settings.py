@@ -158,4 +158,5 @@ STATICFILES_DIRS = [
 
 STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
 STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
-ALLOWED_HOSTS = ['luditics.eastus.cloudapp.azure.com', 'localhost', '127.0.0.1']
+#ALLOWED_HOSTS = ['luditics.eastus.cloudapp.azure.com', 'localhost', '127.0.0.1']
+ALLOWED_HOSTS = ['*']
