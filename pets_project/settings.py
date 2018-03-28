@@ -79,10 +79,10 @@ WSGI_APPLICATION = 'pets_project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'd52e2b06k9qvl9',
-        'USER': 'rzhdrojziltaov',
-        'PASSWORD': '58fbb82938fa7a39adf7702747c4f146b49d4433b6251cbe20401dd3e15e9bf9',
-        'HOST': 'ec2-54-235-109-37.compute-1.amazonaws.com',
+        'NAME': 'd22h8psne9mrvh',
+        'USER': 'vfufcuxcsghhyl',
+        'PASSWORD': '550d023dd8af31b16991ef88dd3b3bd057ce91f3f727f012bc4de55a123f074f',
+        'HOST': 'ec2-54-243-63-13.compute-1.amazonaws.com',
         'PORT': '5432',
     }
 }
