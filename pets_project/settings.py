@@ -11,10 +11,6 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 
 import os
-import dj_database_url
-
-db_from_env = dj_database_url.config(conn_max_age=500)
-DATABASES['default'].update(db_from_env)
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -81,16 +77,29 @@ WSGI_APPLICATION = 'pets_project.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
+#para postgress
+"""DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'd52e2b06k9qvl9',
+        'USER': 'rzhdrojziltaov',
+        'PASSWORD': '58fbb82938fa7a39adf7702747c4f146b49d4433b6251cbe20401dd3e15e9bf9',
+        'HOST': 'ec2-54-235-109-37.compute-1.amazonaws.com',
+        'PORT': '5432',
+    }
+}"""
+
+#para sql server
 DATABASES = {
     'default': {
         'ENGINE': 'sql_server.pyodbc',
-        'NAME': 'juego',
-        'USER': 'root',
-        'PASSWORD': 'root',
-        'HOST': 'DESKTOP-K51338U',
-        'PORT': '',
+        'NAME': 'luditics',
+        'USER': 'luditics',
+        'PASSWORD': 'Lud1t1cs2018**',
+        'HOST': 'luditics.database.windows.net',
+        'PORT': '1433',
         'OPTIONS': {
-            'driver': 'SQL Server',
+            'driver': 'SQL Server'
         },
     }
 }
