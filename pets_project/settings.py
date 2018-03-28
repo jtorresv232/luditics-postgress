@@ -11,6 +11,10 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 
 import os
+import dj_database_url
+
+db_from_env = dj_database_url.config(conn_max_age=500)
+DATABASES['default'].update(db_from_env)
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -78,7 +82,7 @@ WSGI_APPLICATION = 'pets_project.wsgi.application'
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
 #para postgress
-"""DATABASES = {
+DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'd52e2b06k9qvl9',
@@ -87,10 +91,10 @@ WSGI_APPLICATION = 'pets_project.wsgi.application'
         'HOST': 'ec2-54-235-109-37.compute-1.amazonaws.com',
         'PORT': '5432',
     }
-}"""
+}
 
 #para sql server
-DATABASES = {
+"""DATABASES = {
     'default': {
         'ENGINE': 'sql_server.pyodbc',
         'NAME': 'luditics',
@@ -102,7 +106,7 @@ DATABASES = {
             'driver': 'SQL Server'
         },
     }
-}
+}"""
 
 #'default': {
 #    'ENGINE': 'django.db.backends.mysql',
@@ -151,5 +155,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
-STATIC_ROOT = os.path.join(BASE_DIR, "static/")
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, "static"),
+]
+
+STATIC_ROOT = os.path.join(BASE_DIR, "staticfiles")
+STATICFILES_STORAGE = 'whitenoise.django.GzipManifestStaticFilesStorage'
 ALLOWED_HOSTS = ['luditics.eastus.cloudapp.azure.com', 'localhost', '127.0.0.1']
